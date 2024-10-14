@@ -2,24 +2,24 @@
 import java.util.*;
 
 class Book{
-    Scanner in = new Scanner(System.in);
+    Scanner sc = new Scanner(System.in);
     String name, author;
     int price, num_pages;
-    Book(String n, String a, int p, int np){
-        name = n;
-        author = a;
-        price = p;
+    Book(String num, String aut, int pri, int np){
+        name = num;
+        author = aut;
+        price = pri;
         num_pages=np;
     }
     void setDetails(){
         System.out.println("Enter Book Name:");
-        name=in.next();
+        name=sc.next();
         System.out.println("Enter Author's Name: ");
-        author=in.next();
+        author=sc.next();
         System.out.println("Price of Book: ");
-        price= in.nextInt();
+        price= sc.nextInt();
         System.out.println("Enter No. of Pages in Book:");
-        num_pages=in.nextInt();
+        num_pages=sc.nextInt();
     }
     void getDetails(){
         System.out.print("Book Name: "+name);
@@ -35,11 +35,11 @@ class Book{
 
 public class Books {
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         int noBook, j = 0;
         String s = "NA";
         System.out.print("Enter no. of Books: ");
-        noBook = in.nextInt();
+        noBook = sc.nextInt();
         Book[] bk = new Book[noBook];
         for (int i = 0; i < noBook; i++) {
             System.out.println("Book " + (i + 1));
@@ -49,7 +49,7 @@ public class Books {
         System.out.println("\nBook Details");
         for (int k = 0; k < noBook; k++) {
             System.out.println();
-//            bk[k].getDetails();
+
             System.out.println(bk[k].toString());
         }
     }
